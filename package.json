@@ -14,7 +14,7 @@
   "samples": [
     {
         "displayName": "Rotating Cube Sample",
-        "description": "Simple sample with rotating cube the appears on a responsive UI",
+        "description": "Simple sample with a rotating cube that appears on a responsive UI",
         "path": "Samples~/RotatingCube"
     }
   ]
