@@ -6,6 +6,7 @@ namespace Gilzoide.RectTransformCameraViewport
     [RequireComponent(typeof(RectTransform)), ExecuteAlways]
     public class CameraViewportRect : UIBehaviour
     {
+        [Tooltip("Target Camera")]
         [SerializeField] protected Camera _camera;
 
         [Tooltip("Toggle Camera.enabled when this script gets enabled/disabled")]
@@ -17,14 +18,14 @@ namespace Gilzoide.RectTransformCameraViewport
             set
             {
                 _camera = value;
-                Refresh();
+                RefreshCameraRect();
             }
         }
 
         protected Canvas _canvas;
-        protected Vector3[] _worldCorners = new Vector3[4];
+        protected readonly Vector3[] _worldCorners = new Vector3[4];
 
-        public void Refresh()
+        public void RefreshCameraRect()
         {
             if (Camera && _canvas)
             {
@@ -36,7 +37,7 @@ namespace Gilzoide.RectTransformCameraViewport
         {
             if (transform.hasChanged)
             {
-                Refresh();
+                RefreshCameraRect();
             }
         }
 
@@ -65,7 +66,7 @@ namespace Gilzoide.RectTransformCameraViewport
             if (isActiveAndEnabled)
             {
                 _canvas = FindRootCanvas();
-                Refresh();
+                RefreshCameraRect();
             }
         }
 
@@ -75,7 +76,7 @@ namespace Gilzoide.RectTransformCameraViewport
             base.OnValidate();
             if (isActiveAndEnabled)
             {
-                Refresh();
+                RefreshCameraRect();
             }
         }
 #endif
@@ -97,7 +98,7 @@ namespace Gilzoide.RectTransformCameraViewport
 
         protected Canvas FindRootCanvas()
         {
-            Canvas canvas = GetComponentInParent<Canvas>(includeInactive: true);
+            Canvas canvas = GetComponentInParent<Canvas>();
             return canvas != null ? canvas.rootCanvas : null;
         }
     }
