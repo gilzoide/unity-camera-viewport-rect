@@ -8,14 +8,11 @@
   "author": {
     "name": "Gil Barbosa Reis"
   },
-  "dependencies": {
-    "com.unity.ugui": "1.0.0"
-  },
   "samples": [
     {
-        "displayName": "Rotating Cube Sample",
-        "description": "Simple sample with a rotating cube that appears on a responsive UI",
-        "path": "Samples~/RotatingCube"
+      "displayName": "Rotating Cube Sample",
+      "description": "Simple sample with a rotating cube that appears on a responsive UI",
+      "path": "Samples~/RotatingCube"
     }
   ]
 }

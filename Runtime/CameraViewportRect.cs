@@ -1,10 +1,9 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-namespace Gilzoide.RectTransformCameraViewport
+namespace Gilzoide.CameraViewportRect
 {
     [RequireComponent(typeof(RectTransform)), ExecuteAlways]
-    public class CameraViewportRect : UIBehaviour
+    public class CameraViewportRect : MonoBehaviour
     {
         [Tooltip("Target Camera")]
         [SerializeField] protected Camera _camera;
@@ -41,9 +40,8 @@ namespace Gilzoide.RectTransformCameraViewport
             }
         }
 
-        protected override void OnEnable()
+        protected virtual void OnEnable()
         {
-            base.OnEnable();
             _canvas = FindRootCanvas();
             if (ToggleCameraEnabled && Camera)
             {
@@ -51,18 +49,16 @@ namespace Gilzoide.RectTransformCameraViewport
             }
         }
 
-        protected override void OnDisable()
+        protected virtual void OnDisable()
         {
-            base.OnDisable();
             if (ToggleCameraEnabled && Camera)
             {
                 Camera.enabled = false;
             }
         }
 
-        protected override void OnTransformParentChanged()
+        protected virtual void OnTransformParentChanged()
         {
-            base.OnTransformParentChanged();
             if (isActiveAndEnabled)
             {
                 _canvas = FindRootCanvas();
@@ -71,9 +67,8 @@ namespace Gilzoide.RectTransformCameraViewport
         }
 
 #if UNITY_EDITOR
-        protected override void OnValidate()
+        protected virtual void OnValidate()
         {
-            base.OnValidate();
             if (isActiveAndEnabled)
             {
                 RefreshCameraRect();
