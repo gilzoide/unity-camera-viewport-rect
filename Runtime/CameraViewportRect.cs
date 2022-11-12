@@ -17,7 +17,10 @@ namespace Gilzoide.CameraViewportRect
             set
             {
                 _camera = value;
-                RefreshCameraRect();
+                if (isActiveAndEnabled)
+                {
+                    RefreshCameraRect();
+                }
             }
         }
 
