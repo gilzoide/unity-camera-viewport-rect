@@ -1,4 +1,6 @@
 # Camera Viewport Rect
+[![openupm](https://img.shields.io/npm/v/com.gilzoide.camera-viewport-rect?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.gilzoide.camera-viewport-rect/)
+
 Automatically setup `Camera` viewports from `RectTransform`s.
 
 This way one can easily show 3D models directly into responsive UI without the need of setting up `RenderTexture`s.
@@ -14,6 +16,11 @@ This way one can easily show 3D models directly into responsive UI without the n
 
 ## How to install
 Either:
+
+- Install using [openupm](https://openupm.com/):
+  ```
+  openupm add com.gilzoide.camera-viewport-rect
+  ```
 
 - Install via [Unity Package Manager](https://docs.unity3d.com/Manual/upm-ui-giturl.html) using the following URL:
   ```
