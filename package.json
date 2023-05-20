@@ -1,7 +1,7 @@
 {
   "name": "com.gilzoide.camera-viewport-rect",
   "displayName": "Camera Viewport Rect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Automatically setup Camera viewports from RectTransforms\n\nThis way one can easily show 3D models directly into responsive UI without the need of setting up RenderTextures",
   "homepage": "https://github.com/gilzoide/unity-camera-viewport-rect",
   "license": "Unlicense",
