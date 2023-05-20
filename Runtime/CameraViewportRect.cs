@@ -39,6 +39,7 @@ namespace Gilzoide.CameraViewportRect
         {
             if (transform.hasChanged)
             {
+                transform.hasChanged = false;
                 RefreshCameraRect();
             }
         }
